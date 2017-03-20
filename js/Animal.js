@@ -3,14 +3,27 @@
 
   window.zoo = window.zoo || {};
 
+  /**
+   * Creates template for Animal class objects and methods
+   * @type {Object}
+   */
   window.zoo.Animal = class Animal {
     constructor(name, dateOfBirth) {
       this.name = name;
       this.dateOfBirth = dateOfBirth;
     }
+
+    /**
+     * Gives the user the ability to rename the animal.
+     */
     rename(newName) {
       this.name = newName;
     }
+
+    /**
+     * Calculates the animal's age based on their date of birth.
+     * @return {Number}
+     */
     age() {
       let birthYear = this.dateOfBirth.getFullYear();
       let currentYear = new Date();
