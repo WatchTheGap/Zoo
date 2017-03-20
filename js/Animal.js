@@ -4,10 +4,10 @@
   window.zoo = window.zoo || {};
 
   window.zoo.Animal = class Animal {
-    constructor(species, name, dateOfBirth) {
+    constructor(name, dateOfBirth, reproduction) {
       this.name = name;
       this.dateOfBirth = dateOfBirth;
-      this.species = species;
+      this.reproduction = reproduction;
     }
     rename(newName) {
       this.name = newName;
@@ -17,10 +17,6 @@
       this.age = today - dateOfBirth;
     }
 
-
-    toString() {
-    return "I am a " + name + "!";
-    }
   };
 
 }());
