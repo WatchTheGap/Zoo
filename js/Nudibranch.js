@@ -5,18 +5,19 @@
 
   let Animal = window.zoo.Animal;
 
-  window.zoo.Nudibranch class Nudibranch extends Animal{
-    constructor(name, dateOfBirth, reproduction) {
-      super(name, dateOfBirth, reproduction);
-      this.skill = 'can emit sounds that are audible to humans';
+  window.zoo.Nudibranch = class Nudibranch extends Animal{
+    constructor(name, dateOfBirth) {
+      super(name, dateOfBirth);
+      this.skill = name + ' can emit sounds that are audible to humans!';
+      this.reproduction = 'Egg Spiral';
 
     }
 
     toString() {
-    return "I am a nudibranch!";
+    return this.name + ' is a nudibranch!';
     }
 
-  }
+  };
 
 
 }());

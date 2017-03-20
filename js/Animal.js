@@ -4,17 +4,19 @@
   window.zoo = window.zoo || {};
 
   window.zoo.Animal = class Animal {
-    constructor(name, dateOfBirth, reproduction) {
+    constructor(name, dateOfBirth) {
       this.name = name;
       this.dateOfBirth = dateOfBirth;
-      this.reproduction = reproduction;
     }
     rename(newName) {
       this.name = newName;
     }
-    getAge(dateOfBirth) {
-      let today = new Date();
-      this.age = today - dateOfBirth;
+    age() {
+      let birthYear = this.dateOfBirth.getFullYear();
+      let currentYear = new Date();
+      let year = currentYear.getFullYear();
+      let age = year - birthYear;
+      return age;
     }
 
   };
