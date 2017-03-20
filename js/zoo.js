@@ -18,11 +18,13 @@
   console.log(Paul.dateOfBirth);
   console.log(Paul.skill);
   console.log(Paul.toString());
+
+  //laying eggs isn't working but I'd like it to accept an array from this input.
   console.log(Paul.layEggs([
     {name: 'Sadie', dateOfBirth: new Date()},
     {name: 'Eleanor', dateOfBirth: new Date()}
   ]));
-  
+
   let George = new Narwhal ('George', new Date('2/25/90'));
   console.log(George.name);
   console.log(George.toString()); //halp

@@ -40,14 +40,15 @@
     return this.name + ' is a nudibranch born on ' + this.dateOfBirth + '!';
     }
 
-    layEggs(eggArray) { //should accept an array
-      let newEggs = [] ;
-      for (let i = 0; i<= eggArray.length; i++) {
-        newEggs.push(new Nudibranch(eggArray));
+    layEggs(eggs) { //should accept an array
+      let newEggs = [];
+      forEach(function layEggs(egg) {
+        newEggs.push(new Nudibranch(egg));
+        //this is wrong but this is what I'd like it to do.
+      });
       }
-    }
+    };
 
-  };
 
 
 }());
