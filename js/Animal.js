@@ -12,10 +12,10 @@
      */
     constructor(name, dateOfBirth) {
       if (!(name instanceof String)) {
-        throw new TypeError('"name" must be in quotes');
+        throw new TypeError('please enter a valid name');
       }
       if (!(dateOfBirth instanceof Date)) {
-        // throw new TypeError('Please enter a valid date of birth');
+        throw new TypeError('Please enter a valid date of birth');
       }
       this.name = name;
       this.dateOfBirth = dateOfBirth;
@@ -28,7 +28,7 @@
      */
     rename(newName) {
       if (!(newName instanceof String)) {
-        // throw new TypeError('"name" must be in quotes');
+        throw new TypeError('please enter a valid name');
       }
       this.name = newName;
     }

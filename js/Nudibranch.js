@@ -14,12 +14,6 @@
      * @type {Object}
      */
     constructor(name, dateOfBirth = (new Date())) {
-      if (!(name instanceof String)) {
-        // throw new TypeError('"name" must be in quotes');
-      }
-      if (!(dateOfBirth instanceof Date)) {
-        // throw new TypeError('Please enter a valid date of birth');
-      }
       super(name, dateOfBirth);
       this.skill = name + ' can emit sounds that are audible to humans!';
       this.reproduction = name + ' lays thousands of eggs in an egg spiral!';
@@ -32,6 +26,9 @@
      * @return {Object}
      */
     getSkill(hours, feetPerHour) {
+      if (!(typeof hours === "number")) {
+        throw new TypeError('Please enter a valid number');
+      }
       let distance = hours * feetPerHour;
       return this.name + ' crawled over ' + distance + ' feet of substrate today!';
     }
@@ -59,6 +56,9 @@
      */
     layEggs(eggs) { //should accept an array
       let newEggs = [];
+      if(!(Array.isArray)) {
+        throw new TypeError('Please enter an array of eggs');
+      }
       forEach(function layEggs(egg) {
         newEggs.push(new Nudibranch(egg));
         //this is wrong but this is what I'd like it to do.

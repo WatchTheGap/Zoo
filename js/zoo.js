@@ -8,26 +8,33 @@
   let Narwhal = window.zoo.Narwhal;
 
   try {
-    let Testing = new Nudibranch('Test');
+    let Testing = new Nudibranch('test');
       console.log(Testing);
     } catch(err) {
-      console.log('SAD', err);
+        console.warn('SAD', err);
     }
 
-  let John = new Nudibranch ('John', new Date('10/9/80'));
-  console.log(John.reproduction);
-  console.log(John.toString());
-  console.log(John.age());
-  console.log(John.getSkill(8, 3));
-  console.log(Nudibranch.species());
-
-  let Paul = new Nudibranch ('Paul', new Date('6/18/85'));
-  console.log(Paul.dateOfBirth);
-  console.log(Paul.skill);
-  console.log(Paul.toString());
-  Paul.rename('The Walrus');
-  console.log(Paul.name);
-
+    try {
+      let John = new Nudibranch ('John', new Date('10/9/80'));
+      console.log(John.reproduction);
+      console.log(John.toString());
+      console.log(John.age());
+      console.log(John.getSkill(8, 3));
+      console.log(Nudibranch.species());
+    } catch(err) {
+      console.warn(err);
+    }
+    try {
+      let Paul = new Nudibranch ('Paul', new Date('6/18/85'));
+      console.log(Paul.dateOfBirth);
+      console.log(Paul.skill);
+      console.log(Paul.toString());
+      Paul.rename('The Walrus');
+      console.log(Paul.name);
+      }   catch(err) {
+        console.warn(err);
+      }
+      
   //laying eggs isn't working but I'd like it to accept an array from this input.
   // console.log(Paul.layEggs([
   //   {name: 'Sadie', dateOfBirth: new Date()},
