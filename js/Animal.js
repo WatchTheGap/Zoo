@@ -3,12 +3,13 @@
 
   window.zoo = window.zoo || {};
 
-  /**
-   * Creates template for Animal class objects and methods
-   * @type {Object}
-   */
   window.zoo.Animal = class Animal {
-    //docblock was failing, must add better ones
+    /**
+    * Creates template for Animal class objects and methods
+     * @param  {String} name          name of new Animal
+     * @param  {Date}   dateOfBirth   date of birth
+     * @return {void}
+     */
     constructor(name, dateOfBirth) {
       //add if to check if instanceof Date
       this.name = name;
@@ -16,15 +17,17 @@
     }
 
     /**
-     * Gives the user the ability to rename the animal.
+    * Gives the user the ability to rename the animal.
+     * @param  {String} newName name provided to replace existing animal name
+     * @return {void}
      */
     rename(newName) {
       this.name = newName;
     }
 
     /**
-     * Calculates the animal's age based on their date of birth.
-     * @return {Number}
+    * Calculates the animal's age based on their date of birth.
+     * @return {Number} animal's current age
      */
     age() {
       let birthYear = this.dateOfBirth.getFullYear();
