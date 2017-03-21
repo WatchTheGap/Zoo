@@ -27,7 +27,7 @@
      * @return {void}
      */
     rename(newName) {
-      if (!(newName instanceof String)) {
+      if (typeof newName !== 'string') {
         throw new TypeError('please enter a valid name');
       }
       this.name = newName;

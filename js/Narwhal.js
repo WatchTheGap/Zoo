@@ -16,7 +16,7 @@
      */
     constructor(name, dateOfBirth, length) {
       super(name, dateOfBirth);
-      if (!(typeof length === 'number')) {
+      if (typeof length !== 'number') {
         throw new TypeError('Length must be a number');
       }
     }
@@ -38,8 +38,11 @@
      * @param  {Date} dateOfBirth   date of birth set to NOW, time of birth.
      * @return {Object}              new Narwhal object
      */
-    giveBirth (name, dateOfBirth) {
-      return new Narwhal(name, dateOfBirth);
+    giveBirth (name, dateOfBirth, length) {
+      if ((typeof name !== 'string') || (!(dateOfBirth instanceof Date)) || (typeof length !== 'number')) {
+        throw new TypeError("Please enter a valid name, date, and color");
+      }
+      return new Narwhal(name, dateOfBirth, length);
     }
 
     /**
