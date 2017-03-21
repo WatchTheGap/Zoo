@@ -20,6 +20,15 @@
         throw new TypeError('Length must be a number');
       }
     }
+
+    /**
+     * Displays the animal's length
+     * @return {String}
+     */
+    getLength() {
+      return this.length;
+    }
+    
     /**
      * Calculates hourly rate at which holes are poked in ice
      * @param  {Number} [iceHoles=0] total number of holes in ice
@@ -31,12 +40,11 @@
       return 'In his spare time, ' + this.name + ' pokes ' + funTime + ' holes in the ice per hour.';
     }
 
-
     /**
      * Creates a new Narwhal object
-     * @param  {String} name        name of new baby Narwhal
-     * @param  {Date} dateOfBirth   date of birth set to NOW, time of birth.
-     * @return {Object}              new Narwhal object
+     * @param  {String} name          name of new baby Narwhal
+     * @param  {Date}   dateOfBirth   date of birth set to NOW, time of birth.
+     * @return {Object}               new Narwhal object
      */
     giveBirth (name, dateOfBirth, length) {
       if ((typeof name !== 'string') || (!(dateOfBirth instanceof Date)) || (typeof length !== 'number')) {
@@ -61,7 +69,4 @@
       return this.name + ' is a narwhal born on ' + this.dateOfBirth + '!';
     }
   };
-
-
-
 }());

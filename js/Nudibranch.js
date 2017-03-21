@@ -19,6 +19,11 @@
       console.log('in nudibranch constructor');
       console.log(color);
     }
+
+    /**
+     * Displays the animal's color
+     * @return {String}
+     */
     getColor() {
       console.log('in get color'); //broken
       return this.color;
