@@ -11,12 +11,14 @@
      * Creates blueprint for new Narwhal objects
      * @param  {String}   name          for the animal's name
      * @param  {Date}     dateOfBirth   for the animal's date of birth
+     * @param {Number}    length        length of animal
      * @return {void}
      */
-    constructor(name, dateOfBirth) {
+    constructor(name, dateOfBirth, length) {
       super(name, dateOfBirth);
-      this.reproduction = name + ' gives birth to live babies';
-      this.skill = this.name + ' has a long spiral tusk!';
+      if (!(typeof length === 'number')) {
+        throw new TypeError('Length must be a number');
+      }
     }
     /**
      * Calculates hourly rate at which holes are poked in ice
@@ -50,7 +52,7 @@
 
     /**
      * Overrides the toString default to display the animal's name and date of birth.
-     * @return {String} 
+     * @return {String}
      */
     toString() {
       return this.name + ' is a narwhal born on ' + this.dateOfBirth + '!';

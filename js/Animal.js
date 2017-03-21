@@ -11,12 +11,12 @@
      * @return {void}
      */
     constructor(name, dateOfBirth) {
-      if (!(name instanceof String)) {
-        throw new TypeError('please enter a valid name');
-      }
-      if (!(dateOfBirth instanceof Date)) {
-        throw new TypeError('Please enter a valid date of birth');
-      }
+      // if (name typeof !== 'string') {
+      //   throw new TypeError('please enter a valid name');
+      // }
+      // if (!(dateOfBirth instanceof Date)) {
+      //   throw new TypeError('Please enter a valid date of birth');
+      // }
       this.name = name;
       this.dateOfBirth = dateOfBirth;
     }
@@ -39,8 +39,12 @@
      */
     age() {
       let birthYear = this.dateOfBirth.getFullYear();
+      if (birthYear < 1900 || birthYear > 2017); {
+        throw new Error('Birth year must be between 1900-2017');
+      }
       let currentYear = new Date();
       let year = currentYear.getFullYear();
+
       let age = year - birthYear;
       return age;
       //could skip variables. (new Date()) needs bubble to use .getFullYear

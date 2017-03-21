@@ -13,12 +13,16 @@
      * @param {Date}   dateOfBirth  for the animal's date of birth
      * @type {Object}
      */
-    constructor(name, dateOfBirth = (new Date())) {
+    constructor(name, dateOfBirth, color) {
       super(name, dateOfBirth);
-      this.skill = name + ' can emit sounds that are audible to humans!';
-      this.reproduction = name + ' lays thousands of eggs in an egg spiral!';
+      this.color = color;
+      console.log('in nudibranch constructor');
+      console.log(color);
     }
-
+    getColor() {
+      console.log('in get color'); //broken
+      return this.color;
+    }
     /**
      * Calculates the species-specific skill based on time and speed of crawling.
      * @param {Number}  hours         for the number of hours spent crawling
@@ -26,9 +30,9 @@
      * @return {Object}
      */
     getSkill(hours, feetPerHour) {
-      if (!(typeof hours === "number")) {
-        throw new TypeError('Please enter a valid number');
-      }
+      // if (!(typeof hours === 'number') || !(typeof feetPerHour === 'number')) {
+      //   throw new TypeError('Please enter a valid number');
+      // }
       let distance = hours * feetPerHour;
       return this.name + ' crawled over ' + distance + ' feet of substrate today!';
     }
