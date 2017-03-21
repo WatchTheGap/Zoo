@@ -8,7 +8,9 @@
    * @type {Object}
    */
   window.zoo.Animal = class Animal {
+    //docblock was failing, must add better ones
     constructor(name, dateOfBirth) {
+      //add if to check if instanceof Date
       this.name = name;
       this.dateOfBirth = dateOfBirth;
     }
@@ -30,6 +32,7 @@
       let year = currentYear.getFullYear();
       let age = year - birthYear;
       return age;
+      //could skip variables. (new Date()) needs bubble to use .getFullYear
     }
 
   };

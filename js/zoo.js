@@ -12,7 +12,7 @@
   console.log(John.toString());
   console.log(John.age());
   console.log(John.getSkill(8, 3));
-  console.log(John.species); //broken
+  console.log(Nudibranch.species()); 
 
   let Paul = new Nudibranch ('Paul', new Date('6/18/85'));
   console.log(Paul.dateOfBirth);
@@ -22,10 +22,10 @@
   console.log(Paul.name);
 
   //laying eggs isn't working but I'd like it to accept an array from this input.
-  console.log(Paul.layEggs([
-    {name: 'Sadie', dateOfBirth: new Date()},
-    {name: 'Eleanor', dateOfBirth: new Date()}
-  ]));
+  // console.log(Paul.layEggs([
+  //   {name: 'Sadie', dateOfBirth: new Date()},
+  //   {name: 'Eleanor', dateOfBirth: new Date()}
+  // ]));
 
   let George = new Narwhal ('George', new Date('2/25/90'));
   console.log(George.name);
@@ -37,5 +37,5 @@
   let Ringo = new Narwhal ('Ringo', new Date('7/7/90'));
   console.log(Ringo.getSkill(15, 3));
   console.log(Ringo.giveBirth('Billy Shears', new Date()));
-  console.log(Ringo.species); //broken
+  console.log(Narwhal.species());
 }());
