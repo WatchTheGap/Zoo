@@ -13,7 +13,13 @@
      * @param {Date}   dateOfBirth  for the animal's date of birth
      * @type {Object}
      */
-    constructor(name, dateOfBirth) {
+    constructor(name, dateOfBirth = (new Date())) {
+      if (!(name instanceof String)) {
+        // throw new TypeError('"name" must be in quotes');
+      }
+      if (!(dateOfBirth instanceof Date)) {
+        // throw new TypeError('Please enter a valid date of birth');
+      }
       super(name, dateOfBirth);
       this.skill = name + ' can emit sounds that are audible to humans!';
       this.reproduction = name + ' lays thousands of eggs in an egg spiral!';
@@ -49,7 +55,7 @@
     /**
      * Allows the Nudibranch to create one or more new Nudibranch objects
      * @param  {Array} eggs Array containing name & date of each new baby Nudibranchs
-     * @return {void}        
+     * @return {void}
      */
     layEggs(eggs) { //should accept an array
       let newEggs = [];

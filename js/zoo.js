@@ -7,12 +7,19 @@
   let Nudibranch = window.zoo.Nudibranch;
   let Narwhal = window.zoo.Narwhal;
 
+  try {
+    let Testing = new Nudibranch('Test');
+      console.log(Testing);
+    } catch(err) {
+      console.log('SAD', err);
+    }
+
   let John = new Nudibranch ('John', new Date('10/9/80'));
   console.log(John.reproduction);
   console.log(John.toString());
   console.log(John.age());
   console.log(John.getSkill(8, 3));
-  console.log(Nudibranch.species()); 
+  console.log(Nudibranch.species());
 
   let Paul = new Nudibranch ('Paul', new Date('6/18/85'));
   console.log(Paul.dateOfBirth);
@@ -38,4 +45,5 @@
   console.log(Ringo.getSkill(15, 3));
   console.log(Ringo.giveBirth('Billy Shears', new Date()));
   console.log(Narwhal.species());
+
 }());
